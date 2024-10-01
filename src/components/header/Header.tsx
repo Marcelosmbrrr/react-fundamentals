@@ -3,31 +3,20 @@
 import Link from "next/link";
 import {
   Home,
-  LineChart,
+  RefreshCcwDot,
+  SquareFunction,
   Menu,
-  Package,
   Package2,
-  ShoppingCart,
-  Users,
+  Atom
 } from "lucide-react";
 
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-
-import { Atom, SquareFunction, RefreshCcwDot, House } from "lucide-react";
-
 import { useAppName } from "@/context/appName";
 
 export function Header() {
   const { appName } = useAppName();
+
   return (
     <header className="flex h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6">
       <Sheet>
@@ -39,67 +28,96 @@ export function Header() {
         <SheetContent side="left" className="flex flex-col">
           <nav className="grid gap-2 text-lg font-medium">
             <Link
-              href="#"
+              href="/"
               className="flex items-center gap-2 text-lg font-semibold"
             >
-              <Package2 className="h-6 w-6" />
+              <Atom className="h-6 w-6" />
               <span className="sr-only">{appName}</span>
             </Link>
             <Link
-              href="#"
+              href="/introduction"
               className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
             >
               <Home className="h-5 w-5" />
-              Dashboard
+              Introdução
             </Link>
             <Link
-              href="#"
-              className="mx-[-0.65rem] flex items-center gap-4 rounded-xl bg-muted px-3 py-2 text-foreground hover:text-foreground"
-            >
-              <ShoppingCart className="h-5 w-5" />
-              Orders
-              <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
-                6
-              </Badge>
-            </Link>
-            <Link
-              href="#"
+              href="/life-cycle"
               className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
             >
-              <Package className="h-5 w-5" />
-              Products
+              <RefreshCcwDot className="h-5 w-5" />
+              Ciclo de Vida
             </Link>
+            <span className="mx-[-0.65rem] flex items-center gap-3 rounded-xl px-3 py-2 text-muted-foreground">
+              Hooks Básicos
+            </span>
             <Link
-              href="#"
+              href="/use-state"
               className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
             >
-              <Users className="h-5 w-5" />
-              Customers
+              <SquareFunction className="h-5 w-5" />
+              Use State
             </Link>
             <Link
-              href="#"
+              href="/use-effect"
               className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
             >
-              <LineChart className="h-5 w-5" />
-              Analytics
+              <SquareFunction className="h-5 w-5" />
+              Use Effect
+            </Link>
+            <Link
+              href="/use-context"
+              className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
+            >
+              <SquareFunction className="h-5 w-5" />
+              Use Context
+            </Link>
+            <Link
+              href="/use-reducer"
+              className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
+            >
+              <SquareFunction className="h-5 w-5" />
+              Use Reducer
+            </Link>
+            <Link
+              href="/use-ref"
+              className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
+            >
+              <SquareFunction className="h-5 w-5" />
+              Use Ref
+            </Link>
+            <span className="mx-[-0.65rem] flex items-center gap-3 rounded-xl px-3 py-2 text-muted-foreground">
+              Hooks para Performance
+            </span>
+            <Link
+              href="/use-deferred-value"
+              className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
+            >
+              <SquareFunction className="h-5 w-5" />
+              Use Deferred Value
+            </Link>
+            <Link
+              href="/memo"
+              className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
+            >
+              <SquareFunction className="h-5 w-5" />
+              Memo
+            </Link>
+            <Link
+              href="/use-memo"
+              className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
+            >
+              <SquareFunction className="h-5 w-5" />
+              Use Memo
+            </Link>
+            <Link
+              href="/use-callback"
+              className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
+            >
+              <SquareFunction className="h-5 w-5" />
+              Use Callback
             </Link>
           </nav>
-          <div className="mt-auto">
-            <Card>
-              <CardHeader>
-                <CardTitle>Upgrade to Pro</CardTitle>
-                <CardDescription>
-                  Unlock all features and get unlimited access to our support
-                  team.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Button size="sm" className="w-full">
-                  Upgrade
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
         </SheetContent>
       </Sheet>
     </header>
